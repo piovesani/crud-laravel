@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/posts/create', [PostController::class, 'create']);
+Route::get('/posts/read/{id}', [PostController::class, 'read']);
+Route::get('/posts/readAll', [PostController::class, 'readAll']);
+Route::get('/posts/update', [PostController::class, 'update']);
+Route::get('/posts/updateAll', [PostController::class, 'updateAll']);
+Route::get('/posts/delete/', [PostController::class, 'delete']);
 
 Route::get('/', function () {
     return view('welcome');
